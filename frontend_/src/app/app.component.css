@@ -1,0 +1,35 @@
+.table {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.user-input {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.del-all {
+    width: 10%;
+    margin-left: 70%;
+    margin-right: 26%;
+}
+
+/* .table {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.user-input {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.del-all {
+    width: 10%;
+    margin-left: 70%;
+    margin-right: 26%;
+} */

@@ -1,0 +1,69 @@
+<nav class="navbar navbar-light bg-primary">
+  <div class="container-fluid">
+    <h1 style="color: white;">crud</h1>
+    <div class="d-flex">
+    </div>
+  </div>
+</nav>
+
+<div class="user-input mt-5">
+  <!-- <label for="exampleInputEmail1" class="form-label">Email address</label> -->
+
+  <form class="d-flex" [formGroup]="itemValue">
+    <input type="text" class="form-control" id="newItem" aria-describedby="emailHelp"
+      placeholder="Enter item's here ....." formControlName="newItem">
+    <button type="submit" class="btn btn-primary mx-3" (click)="
+    addItem()">Add</button>
+
+  </form>
+
+</div>
+
+
+<table class="table mt-3">
+  <thead>
+    <tr>
+      <td style="column-width: 100px;">all items.</td>
+      <td >action</td>
+      <td><button class="btn btn-danger" (click)="removeAllItem()">delete all</button></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of displayItems">
+      <td style="column-width: 100px;">{{row.item}}</td>
+      <td>
+        <button type="button" class="btn btn-primary" (click)="onEdit(row)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Edit
+        </button>
+      </td>
+      <td>
+        <button class="btn btn-danger " (click)="removeItem(row)">del</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Update Item</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" [formGroup]="modalForm">
+        <input type="text" class="form-control" id="updateItem" aria-describedby="emailHelp"
+        placeholder="Enter item's here ....." formControlName="updateItem">      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="Close">Close</button>
+        <button type="button" class="btn btn-primary" (click)="updateItem()">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
